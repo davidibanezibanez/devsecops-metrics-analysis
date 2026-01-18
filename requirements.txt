@@ -1,0 +1,7 @@
+notebook
+pandas
+tqdm
+jupyter
+ipywidgets
+IProgress
+bibtexparser

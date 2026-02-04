@@ -15,8 +15,8 @@ The project is organized to reflect the three main pillars of the data collectio
 ├── data-international-searches/   # Raw data from Google searches across different countries (Zones).
 ├── data-science-searches/         # Data from academic databases (IEEE, ACM, Scopus, Springer).
 ├── data-website-searches/         # Data from specialized sites (StackOverflow, Reddit, SecuritySE).
-├── data-final/                    # 🏆 Final curated datasets used for analysis.
-├── reportes-markdown/             # 📝 Detailed methodology reports (Step-by-step audit trail).
+├── data-final/                    # Final curated datasets used for analysis.
+├── reportes-markdown/             # Detailed methodology reports (Step-by-step audit trail).
 ├── notebook-*.ipynb               # Jupyter Notebooks for data cleaning, filtering, and analysis.
 └── requirements.txt               # Python dependencies.
 

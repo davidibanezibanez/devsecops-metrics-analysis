@@ -66,30 +66,30 @@ The project is organized to reflect the three main pillars of the data collectio
 ├── data-science-searches/         # Data from academic databases (IEEE, ACM, Scopus, Springer).
 ├── data-website-searches/         # Data from specialized sites (StackOverflow, Reddit, SecuritySE).
 ├── data-final/                    # Final curated datasets used for analysis.
-├── reportes-markdown/             # Detailed methodology reports (Step-by-step audit trail).
+├── reports-markdown/              # Detailed methodology reports (Step-by-step audit trail).
 ├── notebook-*.ipynb               # Jupyter Notebooks for data cleaning, filtering, and analysis.
 └── requirements.txt               # Python dependencies.
 ```
 
 ## Methodology & Process
 
-The research process is documented in detail within the `reportes-markdown` folder. The workflow follows a rigorous pipeline:
+The research process is documented in detail within the `reports-markdown` folder. The workflow follows a rigorous pipeline:
 
 ### 1. International Google Searches
 * **Objective:** Capture the "state of the practice" worldwide.
 * **Method:** Utilized a search algorithm adapted for different geographic zones (Chile, USA, China, etc.) to avoid location bias.
-* **Reports:** See `Reporte 1`, `Reporte 2`, `Reporte 8`.
+* **Reports:** See `Report 1`, `Report 2`, `Report 8`.
 
 ### 2. Scientific Literature Search
 * **Sources:** IEEE Xplore, ACM Digital Library, Scopus, and SpringerLink.
 * **Process:** Automated extraction, normalization of headers, and duplicate removal.
 * **Refinement:** Applied **Snowballing** (backward and forward) to discover related papers.
-* **Reports:** See `Reporte 6`, `Reporte 7`, `Reporte 9`.
+* **Reports:** See `Report 6`, `Report 7`, `Report 9`.
 
 ### 3. Specialized Websites Mining
 * **Sources:** StackOverflow, Reddit, and Security StackExchange.
 * **Process:** Extracted discussions and Q&A threads relevant to DevSecOps metrics.
-* **Reports:** See `Reporte 5`, `Reporte 10`.
+* **Reports:** See `Report 5`, `Report 10`.
 
 ## Usage
 
@@ -97,7 +97,7 @@ To reproduce the data processing or run the analysis notebooks:
 
 1. **Clone the repository**
 ```bash
-git clone [https://github.com/davidibanezibanez/mlr-devsecops-metrics.git](https://github.com/davidibanezibanez/mlr-devsecops-metrics.git)
+git clone [https://github.com/davidibanezibanez/devsecops-metrics-analysis.git](https://github.com/davidibanezibanez/devsecops-metrics-analysis.git)
 cd mlr-devsecops-metrics
 ```
 

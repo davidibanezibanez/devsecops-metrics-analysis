@@ -116,12 +116,13 @@ Each notebook corresponds to a specific data source. Open them with Jupyter:
 jupyter notebook
 ```
 
-## Key Datasets
+## Final Datasets
 
-If you are looking for the final list of metrics or selected papers, check the `data-final` directory:
+If you are looking for the culmination of the data engineering process, check the `data-final` directory. This folder contains the curated and consolidated results of the Multivocal Literature Review (MLR), including:
 
-* `selected-papers.csv`: The final set of included academic studies.
-* `Metrics.csv`: The consolidated list of identified DevSecOps metrics.
+* **Consolidated Grey Literature:** The refined dataset of valid links and information extracted from international web searches.
+* **Selected Scientific Studies:** The final set of primary academic papers obtained after the filtering and snowballing processes.
+* **Extracted Metrics:** The resulting catalog of security metrics and their descriptions identified throughout the research.
 
 ---
 

@@ -1,33 +1,34 @@
-# **Reporte 3: Modificaciones finales algoritmo y búsqueda definitiva**
+## **Report 3: Final Algorithm Adjustments and Definitive Search Execution**
 
-## **Objetivo**
+## **Objective**
 
-Consolidar los enlaces obtenidos por búsquedas en Google desde distintos países, estructurar el proyecto dentro de un directorio único (`data-international-searches/`), y generar un archivo CSV final que contenga los enlaces unificados, etiquetados por país y con su código de respuesta HTTP.
+To consolidate links obtained from Google searches across different countries, organize the project within a single directory (`data-international-searches/`), and generate a final CSV file containing unified links labeled by country and enriched with their HTTP response codes.
 
-## **Resumen de modificaciones y avances**
+## **Summary of Modifications and Progress**
 
-### 1. Reorganización de la estructura de carpetas
+### **1. Folder Structure Reorganization**
 
-Se creó la carpeta principal `data-international-searches/` dentro del proyecto. Todas las carpetas anteriores fueron movidas a esta ubicación, manteniendo la jerarquía:
+A main directory named `data-international-searches/` was created within the project. All previous folders were moved into this location while preserving their hierarchy:
 
 * `data-international-searches/links/`
 * `data-international-searches/linkswithcountrycolumn/`
 * `data-international-searches/linksall/`
 * `data-international-searches/linksallwithhttpcode/`
 
-### 2. Unificación de múltiples CSV por país
+### **2. Merging Multiple CSV Files per Country**
 
-Cada búsqueda en Google (desde cada país con su VPN correspondiente) generó múltiples archivos CSV (uno por página de resultados).
-Se implementó un script en Python que:
+Each Google search (performed from each country using its corresponding VPN) generated multiple CSV files (one per results page).
 
-* Recorrió todos los CSV de cada carpeta de país.
-* Los unió en un único archivo por país.
-* Eliminó duplicados.
-* Guardó el resultado en `data-international-searches/links/` como `links_<país>.csv`.
+A Python script was implemented to:
 
-### 3. Ejecución de búsquedas específicas en Google
+* Iterate through all CSV files within each country folder.
+* Merge them into a single file per country.
+* Remove duplicates.
+* Save the result in `data-international-searches/links/` as `links_<country>.csv`.
 
-Se utilizó la siguiente consulta avanzada en Google:
+### **3. Execution of Advanced Google Searches**
+
+The following advanced Google query was used:
 
 ```
 ("CI/CD" OR "DevSecOps" OR "Continuous Integration" OR "Continuous Delivery" OR "Pipeline security") 
@@ -35,19 +36,19 @@ AND
 ("security metrics" OR "security indicators" OR "security KPIs" OR "vulnerability metrics" OR "security measurement" OR "security score" OR "pipeline security" OR "security performance" OR "security build pipeline")
 ```
 
-Cada búsqueda se realizó conectado a la VPN correspondiente al país.
+Each search was performed while connected to the VPN corresponding to the target country.
 
-### 4. Generación del archivo final
+### **4. Final File Generation**
 
-Tras seguir los pasos anteriores (incluir columna `country`, consolidar en `links_all.csv`, y añadir la columna `httpcode`), se obtuvo el archivo final con:
+After completing the previous steps (adding the `country` column, consolidating into `links_all.csv`, and adding the `httpcode` column), the final dataset was generated with:
 
-* **2200 enlaces únicos**
-* Columnas:
+* **2200 unique links**
+* Columns:
 
   * `Link`
   * `country`
   * `httpcode`
 
-## **Resultado actual**
+## **Current Result**
 
-Un único archivo CSV consolidado que combina enlaces de los 7 países, etiquetados por país y con el estado HTTP de cada enlace.
+A single consolidated CSV file that combines links from 7 countries, labeled by country and enriched with the HTTP status of each link.

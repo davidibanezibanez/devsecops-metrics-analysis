@@ -97,8 +97,7 @@ To reproduce the data processing or run the analysis notebooks:
 
 1. **Clone the repository**
 ```bash
-git clone [https://github.com/davidibanezibanez/devsecops-metrics-analysis.git](https://github.com/davidibanezibanez/devsecops-metrics-analysis.git)
-cd mlr-devsecops-metrics
+git clone https://github.com/davidibanezibanez/devsecops-metrics-analysis.git
 ```
 
 2. **Install dependencies**

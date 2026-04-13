@@ -1,24 +1,26 @@
-# **Reporte 6: Búsquedas en literatura científica**
+## **Report 6: Searches in Scientific Literature**
 
-## **Objetivo**
+## **Objective**
 
-Extender la estrategia de búsqueda a **fuentes de literatura científica** con el fin de incorporar artículos académicos y publicaciones indexadas en repositorios de alto impacto.
+To extend the search strategy to **scientific literature sources** in order to incorporate academic articles and publications indexed in high-impact repositories.
 
-## **Resumen de lo realizado**
+## **Summary of Work Performed**
 
-### 1. Nuevo notebook creado
+### **1. New Notebook Created**
 
-Se desarrolló un notebook independiente:
+A standalone notebook was developed:
 
-* **Nombre:** `notebook-science-searches.ipynb`
-* **Ubicación:** raíz del proyecto.
-* **Carpeta de datos asociada:** `data-science-searches/links/`
+* **Name:** `notebook-science-searches.ipynb`
+* **Location:** project root
+* **Associated data folder:** `data-science-searches/links/`
 
-Este notebook contiene las celdas necesarias para transformar y unificar los resultados obtenidos en diferentes formatos desde los portales de búsqueda académicos.
+This notebook contains the necessary cells to transform and unify results obtained in different formats from academic search platforms.
 
-### 2. Sitios consultados
+---
 
-Se utilizó la misma cadena de búsqueda aplicada en el flujo internacional:
+### **2. Sources Consulted**
+
+The same search string used in the international workflow was applied:
 
 ```
 ("CI/CD" OR "DevSecOps" OR "Continuous Integration" OR "Continuous Delivery" OR "Pipeline security")
@@ -26,31 +28,37 @@ AND
 ("security metrics" OR "security indicators" OR "security KPIs" OR "vulnerability metrics" OR "security measurement" OR "security score" OR "pipeline security" OR "security performance" OR "security build pipeline")
 ```
 
-Los sitios y resultados fueron los siguientes:
+The platforms and resulting files were:
 
-* **Scopus** → exportación directa a CSV (`links_scopus.csv`).
-* **Springer Link** → exportación directa a CSV (`links_springerlink.csv`).
-* **ACM** → exportación en formato BibTeX (`links_acm.bib`), posteriormente convertido a CSV (`links_acm.csv`).
-* **IEEE Xplore** → exportación en formato BibTeX (`links_ieee.bib`), posteriormente convertido a CSV (`links_ieee.csv`).
+* **Scopus** → direct CSV export (`links_scopus.csv`)
+* **Springer Link** → direct CSV export (`links_springerlink.csv`)
+* **ACM** → BibTeX export (`links_acm.bib`), later converted to CSV (`links_acm.csv`)
+* **IEEE Xplore** → BibTeX export (`links_ieee.bib`), later converted to CSV (`links_ieee.csv`)
 
-### 3. Archivos generados
+---
 
-Todos los archivos obtenidos y procesados se encuentran en la carpeta:
+### **3. Generated Files**
+
+All extracted and processed files are located in:
 
 ```
 data-science-searches/links/
 ```
 
-Con los siguientes resultados:
+Resulting files:
 
 * `links_acm.csv`
 * `links_ieee.csv`
 * `links_scopus.csv`
 * `links_springerlink.csv`
 
-## **Compatibilidad de encabezados**
+---
 
-Una vez generados los CSV, se analizó la compatibilidad de encabezados con el fin de planificar una **unificación en un dataset consolidado**.
+## **Header Compatibility Analysis**
+
+After generating the CSV files, their headers were analyzed in order to plan a **future unified consolidated dataset**.
+
+---
 
 ### **1. links_acm.csv**
 
@@ -60,12 +68,16 @@ address, publisher, isbn, year, title, author, ENTRYTYPE, ID, pages,
 month, journal, issn, number, volume, issue_date, note
 ```
 
+---
+
 ### **2. links_ieee.csv**
 
 ```
 doi, keywords, pages, number, volume, year, title, booktitle,
 author, ENTRYTYPE, ID, journal
 ```
+
+---
 
 ### **3. links_scopus.csv**
 
@@ -75,6 +87,8 @@ Volume, Issue, Art. No., Page start, Page end, Page count, Cited by,
 DOI, Link, Document Type, Publication Stage, Open Access, Source, EID
 ```
 
+---
+
 ### **4. links_springerlink.csv**
 
 ```
@@ -82,23 +96,25 @@ Item Title, Publication Title, Book Series Title, Journal Volume,
 Journal Issue, Item DOI, Authors, Publication Year, URL, Content Type
 ```
 
-### **Análisis preliminar de compatibilidad**
+---
 
-* **Título del artículo:**
+### **Preliminary Compatibility Analysis**
+
+* **Title:**
 
   * ACM → `title`
   * IEEE → `title`
   * Scopus → `Title`
   * Springer → `Item Title`
-    → Se puede unificar en `title`.
+    → Can be standardized as: `title`
 
-* **Autores:**
+* **Authors:**
 
   * ACM → `author`
   * IEEE → `author`
   * Scopus → `Authors`
   * Springer → `Authors`
-    → Se puede unificar en `authors` (normalizando formato).
+    → Can be standardized as: `authors` (with normalization)
 
 * **DOI:**
 
@@ -106,28 +122,28 @@ Journal Issue, Item DOI, Authors, Publication Year, URL, Content Type
   * IEEE → `doi`
   * Scopus → `DOI`
   * Springer → `Item DOI`
-    → Se puede unificar en `doi`.
+    → Can be standardized as: `doi`
 
-* **Fuente / Publicación:**
+* **Source / Publication:**
 
   * ACM → `booktitle`
   * IEEE → `booktitle`
   * Scopus → `Source title`
   * Springer → `Publication Title`
-    → Se puede unificar en `source`.
+    → Can be standardized as: `source`
 
-* **Año de publicación:**
+* **Publication Year:**
 
   * ACM → `year`
   * IEEE → `year`
   * Scopus → `Year`
   * Springer → `Publication Year`
-    → Se puede unificar en `year`.
+    → Can be standardized as: `year`
 
-* **Palabras clave:**
+* **Keywords:**
 
   * ACM → `keywords`
   * IEEE → `keywords`
-  * Scopus → ``
-  * Springer → ``
-    → Se puede unificar en `keywords`.
+  * Scopus → *(not available)*
+  * Springer → *(not available)*
+    → Can be standardized as: `keywords`

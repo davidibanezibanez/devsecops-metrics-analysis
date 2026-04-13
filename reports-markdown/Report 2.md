@@ -1,39 +1,39 @@
-## **Reporte 2: Adición de zonas, unificación y verificación de código HTTP**
+## **Report 2: Adding Regions, Data Consolidation, and HTTP Status Code Verification**
 
-### **Objetivo**
+### **Objective**
 
-Continuar con el proceso de recopilación de enlaces científicos y de literatura gris realizado mediante búsquedas en Google desde diferentes países, agregando zona geográfica a los archivos recolectados, unificando los resultados y verificando el estado actual de cada enlace mediante su código de respuesta HTTP.
+To continue the process of collecting scientific and grey literature links obtained through Google searches from different countries, by adding geographical information to the collected files, consolidating the results, and verifying the current status of each link using its HTTP response code.
 
-### **Resumen de lo realizado**
+### **Summary of Work Performed**
 
-#### 1. Adición de columna `country` a archivos CSV individuales
+#### **1. Adding `country` Column to Individual CSV Files**
 
-A partir de los archivos extraídos manualmente con la extensión **Link Extractor**, y organizados por país en la carpeta `links/`, se desarrolló un script en Python que:
+Based on the files manually extracted using the **Link Extractor** extension and organized by country in the `links/` folder, a Python script was developed to:
 
-* Añadió una columna llamada `"country"` a cada archivo CSV.
-* Asignó el nombre del país correspondiente a cada fila.
-* Guardó cada nuevo archivo en la carpeta `linkswithcountrycolumn/`, siguiendo el formato:
-  `links_<país>_withcountrycolumn.csv`
+* Add a column named `"country"` to each CSV file.
+* Assign the corresponding country name to each row.
+* Save each new file in the `linkswithcountrycolumn/` folder using the following format:
+  `links_<country>_withcountrycolumn.csv`
 
-> Países incluidos: `brazil`, `chile`, `china`, `netherlands`, `newzealand`, `southafrica`, `usa`.
+> Included countries: `brazil`, `chile`, `china`, `netherlands`, `newzealand`, `southafrica`, `usa`.
 
-#### 2. Unión de archivos CSV en uno solo
+#### **2. Merging CSV Files into a Single Dataset**
 
-Se creó un script para unir todos los archivos CSV de la carpeta `linkswithcountrycolumn/` en un único archivo general:
+A script was created to merge all CSV files from the `linkswithcountrycolumn/` folder into a single consolidated file:
 
-* Archivo de salida: `links_all.csv`
-* Carpeta de destino: `linksall/`
-* El archivo final contiene todas las filas combinadas, conservando la columna `country`.
+* Output file: `links_all.csv`
+* Destination folder: `linksall/`
+* The final file contains all combined rows while preserving the `country` column.
 
-#### 3. Verificación del estado de los enlaces
+#### **3. Link Status Verification**
 
-Con el archivo combinado `links_all.csv`, se desarrolló un script optimizado para:
+Using the consolidated file `links_all.csv`, an optimized script was developed to:
 
-* Consultar el estado de cada enlace mediante solicitudes HTTP.
-* Obtener el código de estado HTTP (`200`, `404`, `500`, etc.).
-* Añadir esta información como una nueva columna llamada `"httpcode"`.
+* Check the status of each link via HTTP requests.
+* Retrieve the HTTP status code (`200`, `404`, `500`, etc.).
+* Add this information as a new column named `"httpcode"`.
 
-El proceso utilizó **ejecución paralela con `ThreadPoolExecutor`** para acelerar la verificación de \~7000 enlaces.
+The process leveraged **parallel execution using `ThreadPoolExecutor`** to speed up the validation of approximately ~7000 links.
 
-* Archivo final resultante: `links_all_withhttpcode.csv`
-* Carpeta de destino: `linksallwithhttpcode/`
+* Final output file: `links_all_withhttpcode.csv`
+* Destination folder: `linksallwithhttpcode/`

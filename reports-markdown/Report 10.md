@@ -1,33 +1,39 @@
-# **Reporte 10: Filtrado de relevancia en búsquedas de sitios especializados**
+## **Report 10: Relevance Filtering in Specialized Website Searches**
 
-## **Objetivo**
+## **Objective**
 
-Realizar analisis manual del dataset complementario proveniente de sitios de discusión técnica (Stack Overflow, Reddit, Security Stack Exchange), con el fin de identificar si las discusiones comunitarias contenían definiciones formales o métricas de seguridad utilizables para la investigación.
+To perform a manual analysis of the complementary dataset obtained from technical discussion platforms (Stack Overflow, Reddit, Security Stack Exchange), in order to determine whether community discussions contained formal definitions or security metrics usable for the research.
 
-## **Resumen de lo realizado**
+---
 
-### **1. Archivo de trabajo**
+## **Summary of Work Performed**
 
-Se procesó el archivo unificado de búsquedas en sitios web:
+### **1. Working File**
 
-* **Nombre del archivo:** `data-website-searches_links_all_withhttpcode_onlyunique200.xlsx`
-* **Ubicación:** `data-website-searches/`
-* **Contenido:** Una única pestaña principal con **448 enlaces** provenientes de las consultas específicas en foros y comunidades.
+The unified dataset of website-based searches was processed:
 
-### **2. Proceso de revisión manual**
+* **File name:** `data-website-searches_links_all_withhttpcode_onlyunique200.xlsx`
+* **Location:** `data-website-searches/`
+* **Content:** A single main sheet containing **448 links** derived from targeted queries on forums and community platforms.
 
-Se añadieron columnas de control para evaluar cada enlace uno por uno:
+---
 
-* **`topic`**: Criterio de relevancia temática.
-* **`english`**: Verificación de idioma.
-* **`access (yes/no)`**: Verificación de accesibilidad manual.
+### **2. Manual Review Process**
 
-El análisis se centró en determinar si los hilos de discusión o posts contenían métricas de seguridad explícitas para CI/CD pipelines.
+Control columns were added to evaluate each link individually:
 
-## **Resultado actual**
+* **`topic`**: Thematic relevance assessment.
+* **`english`**: Language verification.
+* **`access (yes/no)`**: Manual accessibility check.
 
-### **Descarte total de la fuente**
+The analysis focused on determining whether discussion threads or posts contained explicit security metrics for CI/CD pipelines.
 
-Tras la revisión de los **448 registros**, el resultado fue:
+---
 
-* **100% de los enlaces (448/448)** fueron clasificados como **`no-topic`**.
+## **Current Result**
+
+### **Complete Source Rejection**
+
+After reviewing all **448 records**, the outcome was:
+
+* **100% of the links (448/448)** were classified as **`no-topic`**.

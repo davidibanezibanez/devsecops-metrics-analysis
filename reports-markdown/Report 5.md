@@ -1,49 +1,49 @@
-# **Reporte 5: Búsquedas en sitios web especializados**
+## **Report 5: Searches on Specialized Websites**
 
-## **Objetivo**
+## **Objective**
 
-Ampliar la estrategia de recolección de enlaces mediante un enfoque complementario al de las búsquedas internacionales. Esta vez, en lugar de filtrar por país, se realizó la recolección de enlaces en **sitios web específicos de interés para la comunidad técnica**.
+To expand the link collection strategy through a complementary approach to international searches. Instead of filtering by country, this phase focused on collecting links from **specific websites relevant to the technical community**.
 
-## **Resumen de lo realizado**
+## **Summary of Work Performed**
 
-### 1. Nuevo notebook creado
+### **1. New Notebook Created**
 
-Se desarrolló un notebook independiente:
+A standalone notebook was developed:
 
-* **Nombre:** `notebook-website-searches.ipynb`
-* **Carpeta de datos asociada:** `data-website-searches/`
+* **Name:** `notebook-website-searches.ipynb`
+* **Associated data folder:** `data-website-searches/`
 
-Este notebook sigue la misma estructura y pasos que **`notebook-international-searches.ipynb`**, con la diferencia principal de que en lugar de la columna `"country"`, se agrega la columna **`website`**, identificando el portal de origen de cada enlace.
+This notebook follows the same structure and steps as `notebook-international-searches.ipynb`, with the key difference that instead of the `"country"` column, a **`website`** column is added, identifying the source platform of each link.
 
-### 2. Sitios consultados
+### **2. Websites Consulted**
 
-Las búsquedas se llevaron a cabo en los siguientes sitios especializados:
+Searches were conducted on the following specialized platforms:
 
 * [Stack Overflow](https://stackoverflow.com/)
 * [Security Stack Exchange](https://security.stackexchange.com/)
 * [Reddit](https://www.reddit.com/)
 
-### 3. Estrategia de búsqueda
+### **3. Search Strategy**
 
-A diferencia de Google, donde se utilizó una **cadena compleja de búsqueda booleana**, en este caso se definieron **tres consultas específicas** que fueron aplicadas en cada uno de los sitios:
+Unlike Google, where a complex Boolean search string was used, this phase relied on **three specific queries** applied across all platforms:
 
 1. `CI/CD pipeline security`
 2. `CI/CD security build pipeline`
 3. `CI/CD security performance`
 
-Cada búsqueda generó resultados que fueron recopilados y exportados en CSVs, siguiendo el mismo flujo de procesamiento (unificación, adición de columna `website`, verificación de accesibilidad HTTP, etc.).
+Each search generated results that were collected and exported as CSV files, following the same processing workflow (merging, adding the `website` column, HTTP accessibility verification, etc.).
 
-### 4. Resultado
+### **4. Result**
 
-El proceso finalizó con un dataset unificado que sigue la misma estructura que el de las búsquedas internacionales, pero adaptado a este nuevo eje de análisis:
+The process resulted in a unified dataset following the same structure as the international search dataset, but adapted to this new analysis axis:
 
-* **Columnas del dataset final:**
+* **Final dataset columns:**
 
   * `Link`
   * `website`
   * `httpcode`
 
-* **Carpeta contenedora:**
+* **Containing folder:**
   `data-website-searches/`
 
-El resultado constituye un dataset complementario que recoge la perspectiva de la **literatura gris** y de la discusión comunitaria en torno a seguridad en CI/CD.
+This dataset represents a complementary collection capturing the perspective of **grey literature and community discussions** around CI/CD security.

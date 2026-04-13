@@ -1,22 +1,22 @@
-# **Reporte 4: Filtrado de enlaces únicos y válidos**
+## **Report 4: Filtering Unique and Valid Links**
 
-## **Objetivo**
+## **Objective**
 
-Optimizar el archivo consolidado de enlaces internacionales aplicando dos filtros fundamentales:
+To optimize the consolidated international links dataset by applying two fundamental filters:
 
-1. Eliminar enlaces duplicados, conservando únicamente la primera aparición.
-2. Conservar solo los enlaces con estado HTTP **200 (válido y accesible)**.
+1. Remove duplicate links, keeping only the first occurrence.
+2. Retain only links with HTTP status **200 (valid and accessible)**.
 
-## **Resumen de lo realizado**
+## **Summary of Work Performed**
 
-### 1. Archivo de entrada
+### **1. Input File**
 
-Se utilizó como base el archivo consolidado con códigos HTTP:
+The consolidated file containing HTTP status codes was used as the base:
 
-* **Ubicación:**
+* **Location:**
   `data-international-searches/linksallwithhttpcode/links_all_withhttpcode.csv`
 
-* **Columnas existentes:**
+* **Existing columns:**
 
   * `Link`
   * `country`
@@ -24,33 +24,33 @@ Se utilizó como base el archivo consolidado con códigos HTTP:
 
 ---
 
-### 2. Proceso de filtrado
+### **2. Filtering Process**
 
-Se implementó una celda de código en el notebook **`notebook-international-searches.ipynb`** que:
+A code cell was implemented in the notebook **`notebook-international-searches.ipynb`** that:
 
-* Eliminó los duplicados en la columna `Link`, manteniendo únicamente la primera aparición sin importar el país.
-* Filtró los enlaces dejando únicamente aquellos con `httpcode` igual a **200** (o `200.0` en formato flotante).
+* Removed duplicates in the `Link` column, keeping only the first occurrence regardless of country.
+* Filtered the dataset to retain only links with `httpcode` equal to **200** (or `200.0` in float format).
 
 ---
 
-### 3. Archivo de salida
+### **3. Output File**
 
-El archivo resultante se guardó en la siguiente ubicación:
+The resulting file was saved in the following location:
 
-* **Carpeta:**
+* **Folder:**
   `data-international-searches/linksallwithhttpcodeonlyunique200/`
 
-* **Nombre de archivo:**
+* **File name:**
   `links_all_withhttpcode_onlyunique200.csv`
 
-Este archivo contiene únicamente enlaces **únicos y válidos**, lo que representa un conjunto de datos limpio y confiable para los siguientes análisis.
+This file contains only **unique and valid links**, representing a clean and reliable dataset for further analysis.
 
-## **Resultado actual**
+## **Current Result**
 
-El proyecto cuenta ahora con un dataset depurado que incluye:
+The project now includes a refined dataset with:
 
-* **Columna `Link`:** enlaces únicos.
-* **Columna `country`:** país desde donde fue extraído el enlace.
-* **Columna `httpcode`:** confirmación de accesibilidad (200).
+* **`Link` column:** unique links.
+* **`country` column:** country from which the link was extracted.
+* **`httpcode` column:** accessibility confirmation (200).
 
-El total de filas se redujo tras eliminar duplicados y descartar enlaces no válidos, quedando solo aquellos enlaces que están **activos y accesibles**.
+The total number of rows was reduced after removing duplicates and discarding invalid links, leaving only those that are **active and accessible**.

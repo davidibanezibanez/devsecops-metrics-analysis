@@ -1,23 +1,29 @@
-# Reporte 7: Unificación de literatura científica
+## **Report 7: Consolidation of Scientific Literature**
 
-En esta etapa del proyecto avanzamos con el procesamiento y normalización de los datos provenientes de las búsquedas en bases de datos científicas (ACM, IEEE, Scopus y Springer Link). El objetivo principal fue **unificar los encabezados relevantes y consolidar todos los resultados en un único archivo** para facilitar el análisis.
+In this stage of the project, we focused on processing and normalizing data obtained from scientific databases (ACM, IEEE, Scopus, and Springer Link). The main objective was to **standardize relevant headers and consolidate all results into a single file** to facilitate further analysis.
 
-## Pasos realizados
+---
 
-### 1. Normalización inicial de encabezados
+## **Steps Performed**
 
-* Creamos el directorio `data-science-searches/linksnormalizedheaders/`.
-* Copiamos y renombramos los 4 archivos `.csv` generados a partir de cada fuente, obteniendo:
+### **1. Initial Header Normalization**
+
+* A directory named `data-science-searches/linksnormalizedheaders/` was created.
+
+* The four `.csv` files generated from each data source were copied and renamed, resulting in:
 
   * `links_acm_normalized.csv`
   * `links_ieee_normalized.csv`
   * `links_scopus_normalized.csv`
   * `links_springerlink_normalized.csv`
-* En cada archivo se estandarizaron los nombres de las columnas de interés para lograr compatibilidad entre todas las fuentes.
 
-### 2. Limpieza y reducción de columnas
+* In each file, the column names were standardized to ensure compatibility across all sources.
 
-* Implementamos una celda en el notebook `notebook-science-searches.ipynb` para filtrar y dejar solamente las columnas relevantes:
+---
+
+### **2. Cleaning and Column Reduction**
+
+* A notebook cell was implemented in `notebook-science-searches.ipynb` to filter and retain only the relevant columns:
 
   * `title`
   * `authors`
@@ -25,35 +31,45 @@ En esta etapa del proyecto avanzamos con el procesamiento y normalización de lo
   * `source`
   * `year`
   * `keywords`
-* Los archivos resultantes se almacenaron en el directorio:
+
+* The resulting files were stored in:
   `data-science-searches/linksnormalizedheadersclean/`
 
-### 3. Incorporación de columna `database_source`
+---
 
-* Creamos un nuevo directorio llamado:
+### **3. Addition of `database_source` Column**
+
+* A new directory was created:
   `data-science-searches/linksnormalizedheaderscleanwithdatabasesource/`
-* En este paso agregamos a cada CSV una columna adicional llamada **`database_source`**, que indica la procedencia de los datos:
 
-  * `"acm"` para ACM Digital Library.
-  * `"ieee"` para IEEE Xplore.
-  * `"scopus"` para Scopus.
-  * `"springerlink"` para Springer Link.
+* In this step, an additional column named **`database_source`** was added to each CSV, indicating the origin of the data:
 
-### 4. Consolidación final de resultados
+  * `"acm"` for ACM Digital Library
+  * `"ieee"` for IEEE Xplore
+  * `"scopus"` for Scopus
+  * `"springerlink"` for Springer Link
 
-* Finalmente, unimos todos los archivos con encabezados limpios y la columna `database_source` en un solo archivo consolidado.
-* Este archivo se guardó en el directorio:
+---
+
+### **4. Final Consolidation of Results**
+
+* Finally, all cleaned files with the `database_source` column were merged into a single consolidated dataset.
+
+* This file was saved in:
   `data-science-searches/linksnormalizedheaderscleanwithdatabasesourceall/`
-* Nombre del archivo resultante:
+
+* Output file name:
   **`links_normalized_clean_withdatabasesource_all.csv`**
 
-## Resultado final
+---
 
-Con este flujo de trabajo se logró:
+## **Final Result**
 
-* Normalizar los encabezados de los distintos datasets científicos.
-* Reducir cada dataset a 6 columnas clave.
-* Incorporar una columna de procedencia (`database_source`) para mantener trazabilidad.
-* Consolidar todos los resultados en un único archivo con formato unificado.
+This workflow achieved:
 
-Este archivo final es la base estandarizada que permitirá realizar análisis comparativos y métricas sobre las publicaciones científicas extraídas de diferentes fuentes.
+* Standardization of headers across multiple scientific datasets.
+* Reduction of each dataset to 6 core columns.
+* Addition of a provenance column (`database_source`) to maintain traceability.
+* Consolidation of all results into a single unified dataset.
+
+This final file serves as a standardized foundation for performing comparative analysis and metric generation on scientific publications extracted from multiple sources.

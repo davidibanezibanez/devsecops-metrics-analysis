@@ -1,57 +1,67 @@
-# **Reporte 9: Selección de papers y snowballing (literatura científica)**
+## **Report 9: Paper Selection and Snowballing (Scientific Literature)**
 
-## **Objetivo**
+## **Objective**
 
-Depurar el dataset de literatura científica mediante un proceso de filtrado manual, complementado con la técnica de **Snowballing (Bola de Nieve)** —tanto hacia atrás (referencias) como hacia adelante (citas)— para asegurar la exhaustividad de la revisión, terminando en la selección final de los papers.
+To refine the scientific literature dataset through a manual filtering process, complemented by the **Snowballing technique** (both backward and forward citation tracking), in order to ensure a comprehensive review and finalize the selection of relevant papers.
 
-## **Resumen de lo realizado**
+---
 
-### **1. Archivo de trabajo**
+## **Summary of Work Performed**
 
-Se centralizó todo el flujo de decisión en un único archivo maestro, el cual contiene la trazabilidad completa desde la lista bruta hasta los papeles aceptados:
+### **1. Working File**
 
-* **Nombre del archivo:** `data-science-searches_links_normalized_clean_withdatabasesource_all_withfilters.xlsx`
-* **Ubicación:** raíz del directorio de trabajo de búsquedas científicas.
+All decision-making processes were centralized in a single master file, which contains full traceability from the raw dataset to the final accepted papers:
 
-El archivo se estructura en múltiples pestañas que representan las **4 etapas del flujo de selección**:
+* **File name:** `data-science-searches_links_normalized_clean_withdatabasesource_all_withfilters.xlsx`
+* **Location:** root of the scientific search working directory
 
-### **Etapa 1: Filtrado Inicial (Hoja `1 - all`)**
+The file is structured into multiple sheets representing the **four-stage selection workflow**.
 
-Se partió del listado consolidado de ~726 registros. Se aplicaron criterios de exclusión manuales añadiendo columnas de control:
+---
 
-* **`topic`**: Clasificación de relevancia temática. Se marcaron como `yes-topic` aquellos estudios directamente relacionados con métricas de seguridad en CI/CD.
-* **`english`**: Verificación de idioma.
-* **`paper`**: Confirmación de que el documento es un artículo científico (y no índices, portadas, etc.).
+### **Stage 1: Initial Screening (Sheet `1 - all`)**
 
-Los documentos que superaron este filtro constituyeron el **Round 1** de la selección.
+The process began with a consolidated list of approximately **726 records**. Manual exclusion criteria were applied by introducing control columns:
 
-### **Etapa 2: Proceso de Snowballing (Hojas `2 - ...` y `3 - ...`)**
+* **`topic`**: Thematic relevance classification. Records marked as `yes-topic` were directly related to security metrics in CI/CD pipelines.
+* **`english`**: Language verification.
+* **`paper`**: Confirmation that the document is a scientific article (excluding indexes, front matter, etc.).
 
-Para los documentos seleccionados en el Round 1, se aplicó la técnica de Snowballing en iteraciones para encontrar nuevos estudios relevantes no capturados por la búsqueda inicial.
+Documents that passed this filtering constituted the **Round 1 selection**.
 
-#### **Iteración 2 (Round 2)**
+---
 
-* **Backward Snowballing (`2 - snowballing-back`)**: Revisión de las referencias bibliográficas de los artículos del Round 1.
-* **Forward Snowballing (`2 - snowballing-foward`)**: Revisión de los trabajos que han citado a los artículos del Round 1.
+### **Stage 2: Snowballing Process (Sheets `2 - ...` and `3 - ...`)**
 
-#### **Iteración 3 (Round 3)**
+For the Round 1 selected documents, the Snowballing technique was applied iteratively to identify additional relevant studies not captured in the initial search.
 
-* Se repitió el proceso (`3 - snowballing-back` y `3 - snowballing-foward`) aplicado a los nuevos candidatos relevantes encontrados en el Round 2, buscando expandir la red de literatura.
+#### **Iteration 2 (Round 2)**
 
-En cada hoja de snowballing se registró la referencia completa y se tomó una decisión de relevancia (`yes-topic` / `no-topic`).
+* **Backward Snowballing (`2 - snowballing-back`)**: Review of references cited by Round 1 papers.
+* **Forward Snowballing (`2 - snowballing-forward`)**: Review of papers citing Round 1 papers.
 
-### **Etapa 3: Consolidación de Candidatos (Hoja `selected-papers`)**
+#### **Iteration 3 (Round 3)**
 
-Se generó una lista unificada de **23 documentos candidatos** que superaron los filtros de título y resumen de las etapas anteriores.
+* The same process was repeated (`3 - snowballing-back` and `3 - snowballing-forward`) on newly identified relevant papers from Round 2, expanding the literature network further.
 
-* **Contenido:** Incluye tanto los hallazgos de la búsqueda inicial (Round 1) como los rescatados vía Snowballing (Round 2).
-* **Metadatos clave:** Título, Autores, DOI, Fuente (Journal/Conference) y la Ronda de origen.
-* **Estado:** En esta lista se realizó un seguimiento con valores como `x` o `Revisar` para gestionar la lectura completa.
+Each snowballing sheet recorded full references and assigned a relevance decision (`yes-topic` / `no-topic`).
 
-### **Etapa 4: Selección Definitiva (Hoja `ok-papers`)**
+---
 
-Tras la lectura del texto completo y el análisis de calidad de los 23 candidatos, se produjo la lista final de estudios primarios aceptados.
+### **Stage 3: Candidate Consolidation (Sheet `selected-papers`)**
 
-* **Total de estudios seleccionados:** **7 papers**.
-* **Criterio:** Estos documentos (`ok-papers`) son los que efectivamente aportan métricas o modelos de seguridad en pipelines CI/CD y cumplen con todos los criterios de inclusión.
-* **Traza:** Se conserva el enlace a la fuente oficial y el DOI verificado.
+A unified list of **23 candidate papers** was created after title and abstract screening across all previous stages.
+
+* **Content:** Includes both initial search results (Round 1) and snowballing discoveries (Round 2).
+* **Key metadata:** Title, Authors, DOI, Source (Journal/Conference), and Origin Round.
+* **Status:** Entries were tracked using markers such as `x` or `Review` for full-text evaluation management.
+
+---
+
+### **Stage 4: Final Selection (Sheet `ok-papers`)**
+
+After full-text reading and quality assessment of the 23 candidate papers, the final set of primary studies was established:
+
+* **Total selected papers:** **7 papers**
+* **Criteria:** These `ok-papers` are those that effectively contribute security metrics or models for CI/CD pipelines and satisfy all inclusion criteria.
+* **Traceability:** Each entry includes a verified source link and validated DOI.
